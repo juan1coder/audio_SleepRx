@@ -1,10 +1,10 @@
 #!/bin/bash
-#CTRL+SHIFT+F12
+#CTRL+SHIFT+F12 [chanque if you're using this with a different keybrd shortcut]
 
 # Save the current directory
 current_dir=$(pwd)
 
-# Change directory to the external drive
+# Change directory to the external drive, edit to add your own file path. 
 cd /media/yonn/rootMX17/home/yonnlopez/audio
 
 # Get current date and time
@@ -16,7 +16,7 @@ output_file="recording_$current_date.mp3"
 # Record audio/video using ffmpeg in the background
 xfce4-terminal -x sh -c "ffmpeg -f pulse -i default -c:a libmp3lame -b:a 128k \"$output_file\""
 
-# Wait for a moment to ensure ffmpeg has started
+# Wait for a moment to ensure ffmpeg has a clean exit. 
 sleep 1
 
 # Display a GUI dialog for renaming the file
